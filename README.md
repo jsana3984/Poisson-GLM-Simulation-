@@ -1,6 +1,5 @@
 # Poisson GLM Simulation
 R-based statistical modeling projects demonstrating Poisson regression, overdispersion handling, and Monte Carlo simulations for count data analysis.
-# Poisson GLM & Monte Carlo Confounding Simulation
 
 ## Overview
 **Project Highlight:** *Poisson GLM Simulation (R, grade : 95) – Built count-data models with offsets and overdispersion diagnostics; ran Monte Carlo study on confounding bias.*
