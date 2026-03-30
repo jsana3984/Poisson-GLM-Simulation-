@@ -35,19 +35,12 @@ The second analysis simulates the flaw in the statistical reasoning used during 
 ### Simulation Methodology
 Three distinct analytical approaches were tested over 200 replications to evaluate their Type I error rates (falsely rejecting the null hypothesis $\beta_{Lucia} = 0$):
 
-1. **Careful Analysis (Poisson GLM):** Controls for the confounder (shift type).
-   $$
-   \log(\mu) = \beta_0 + \beta_1 \cdot \text{Morning} + \beta_2 \cdot \text{Lucia}
-   $$
-2. **Less Careful Analysis (Poisson GLM):** Aggregates data and ignores the confounder.
-   $$
-   \log(\mu) = \beta_0 + \beta_2 \cdot \text{Lucia} + \log(\text{Shifts})
-   $$
-3. **Original Trial Analysis (Hypergeometric):** Calculates the exact probability of observing $q$ or more incidents, falsely assuming incident risks are constant across all shifts.
-   $$
-   P(X \ge q) = \sum_{x=q}^{k} \frac{\binom{m}{x} \binom{n}{k-x}}{\binom{m+n}{k}}
-   $$
-
+1. **Careful Analysis (Poisson GLM):** Controls for the confounder (shift type). 
+   $$\log(\mu) = \beta_0 + \beta_1 \cdot \text{Morning} + \beta_2 \cdot \text{Lucia}$$
+2. **Less Careful Analysis (Poisson GLM):** Aggregates data and ignores the confounder. 
+   $$\log(\mu) = \beta_0 + \beta_2 \cdot \text{Lucia} + \log(\text{Shifts})$$
+3. **Original Trial Analysis (Hypergeometric):** Calculates the exact probability of observing $q$ or more incidents, falsely assuming incident risks are constant across all shifts. 
+   $$P(X \ge q) = \sum_{x=q}^{k} \frac{\binom{m}{x} \binom{n}{k-x}}{\binom{m+n}{k}}$$
 ### Key Results
 The Monte Carlo study empirically proved the danger of omitted variable bias:
 * The **Careful Analysis** maintained the correct nominal Type I error rate (**~0.050**).
